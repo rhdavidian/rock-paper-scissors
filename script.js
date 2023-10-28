@@ -1,19 +1,8 @@
-// Create a string variable, input by the user, that says Rock,
-// Paper, or Scissors.
-
-// Create a string variable that is input from the computer that is one of the same three 
-
-// Write a function that compares the string inputs and returns a winner, or a draw
-//create a function that calls the main game function five times, and keeps a score to five
-//
-
-
 function getComputerChoice (){
     let array = ['rock', 'paper', 'scissors'];
     let choice = array[Math.floor(Math.random() * array.length)];
     return choice;
 }
-
 
 function game(n) {
     let playerScore = 0; 
