@@ -4,7 +4,6 @@ const scissors = document.querySelector('#scissors');
 const div = document.querySelector('div');
 
 rock.addEventListener('click', () => {
-    let a = 'rock';
     let yourScore = document.getElementById('yourScore');
     let compScore = document.getElementById('compScore');
     let ties = document.getElementById('ties');
@@ -17,16 +16,16 @@ rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
         if (result == 'win') {
-            yourScore.innerHTML = (+score + 1);
+            yourScore.innerHTML = +score + 1;
         } else if (result == 'lose'){
-            compScore.innerHTML = (+cScore + 1);
+            compScore.innerHTML = +cScore + 1;
         } else {
-            ties.innerHTML = + (+t + 1);
+            ties.innerHTML = +t + 1;
         }
+    winner (score, cScore);
 });
 
 paper.addEventListener('click', () => {
-    let a = 'paper';
     let yourScore = document.getElementById('yourScore');
     let compScore = document.getElementById('compScore');
     let ties = document.getElementById('ties');
@@ -38,16 +37,16 @@ paper.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
         if (result == 'win') {
-            yourScore.innerHTML = (+score + 1);
+            yourScore.innerHTML = +score + 1;
         } else if (result == 'lose'){
-            compScore.innerHTML = (+cScore + 1);
+            compScore.innerHTML = +cScore + 1;
         } else {
-            ties.innerHTML = + (+t + 1);
+            ties.innerHTML = +t + 1;
         }
-})
+    winner(score, cScore);
+});
 
 scissors.addEventListener('click', () => {
-    let a = 'scissors';
     let yourScore = document.getElementById('yourScore');
     let compScore = document.getElementById('compScore');
     let ties = document.getElementById('ties');
@@ -65,27 +64,8 @@ scissors.addEventListener('click', () => {
         } else {
             ties.innerHTML = +t + 1;
         }
-})
-
-
-    // yourScore.innerHTML = +score + 1;
-
-
-    // let playerScore = 0;
-    // let computerScore = 0;
-    // let tie = 0;
-    // let playerSelection = rock.id;
-    // let computerSelection = getComputerChoice();
-    // let result = playRound(playerSelection, computerSelection);
-    // div.textContent += result + ' '; 
-    //     if (result == 'win') {
-    //        yourScore.textContent = playerScore++;
-    //     } else if (result == 'lose') {
-    //        compScore.textContent = computerScore++;
-    //     } else {
-    //        ties.textContent = tie++;
-    //     }
-    //     return result;
+    winner(score, cScore);
+});
 
 function getComputerChoice (){
     let array = ['rock', 'paper', 'scissors'];
@@ -157,6 +137,15 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+function winner(you, computer) {
+    if (you == 5) {
+        alert('YOU WIN!')
+    } else if (computer == 5) {
+        alert('YOU LOSE');
+    }
+}
+
 
 // let numGames = prompt("How many games would you like to play? We suggest 5.");
 // let numGames = 1;
